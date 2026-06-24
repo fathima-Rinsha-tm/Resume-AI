@@ -1,0 +1,377 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ResumeAI - Resume Builder</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f6fb;
+color:#1e293b;
+overflow-x:hidden;
+}
+
+/* TOP HEADER */
+
+.top-bar{
+background:#111827;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+color:white;
+}
+
+.template-badge{
+background:white;
+color:#111827;
+padding:10px 20px;
+border-radius:30px;
+font-weight:600;
+}
+
+/* HERO */
+
+.hero{
+padding:70px 8%;
+text-align:center;
+background:linear-gradient(135deg,#111827,#1f2937);
+color:white;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+opacity:.9;
+max-width:700px;
+margin:auto;
+}
+
+/* PROGRESS */
+
+.progress{
+padding:50px 8%;
+}
+
+.progress-box{
+background:white;
+border-radius:25px;
+padding:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+text-align:center;
+}
+
+.step{
+padding:20px;
+border-radius:15px;
+background:#f8fafc;
+}
+
+.step h3{
+margin-bottom:8px;
+}
+
+.active-step{
+background:#111827;
+color:white;
+}
+
+/* MAIN AREA */
+
+.main-container{
+padding:0 8% 100px;
+display:grid;
+grid-template-columns:320px 1fr;
+gap:30px;
+}
+
+.sidebar{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.side-card{
+background:white;
+padding:25px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.side-card h3{
+margin-bottom:15px;
+color:#111827;
+}
+
+.side-card p{
+line-height:1.7;
+color:#64748b;
+}
+
+.tip{
+padding:15px;
+background:#f8fafc;
+border-radius:12px;
+margin-bottom:10px;
+}
+
+.form-card{
+background:white;
+padding:40px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.form-title{
+font-size:35px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.form-subtitle{
+color:#64748b;
+margin-bottom:35px;
+}
+/* DJANGO FORM STYLING */
+
+form p{
+display:flex;
+flex-direction:column;
+margin-bottom:22px;
+}
+
+form label{
+font-weight:600;
+margin-bottom:8px;
+color:#1e293b;
+}
+
+form input,
+form textarea,
+form select{
+width:100%;
+padding:15px;
+border:1px solid #dbe2ea;
+border-radius:14px;
+font-size:15px;
+transition:.3s;
+background:#fafafa;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus{
+outline:none;
+border-color:#111827;
+background:white;
+box-shadow:0 0 15px rgba(0,0,0,.08);
+}
+
+form textarea{
+min-height:130px;
+resize:vertical;
+}
+
+/* BUTTON */
+
+.submit-btn{
+width:100%;
+padding:18px;
+border:none;
+border-radius:16px;
+background:linear-gradient(135deg,#111827,#374151);
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+margin-top:20px;
+}
+
+.submit-btn:hover{
+transform:translateY(-4px);
+}
+
+/* FOOTER */
+
+.footer-note{
+text-align:center;
+margin-top:25px;
+color:#64748b;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:992px){
+
+.hero h1{
+font-size:40px;
+}
+
+.main-container{
+grid-template-columns:1fr;
+}
+
+.progress-box{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top-bar">
+
+<div class="logo">
+ResumeAI
+</div>
+
+<div class="template-badge">
+Resume Builder Workspace
+</div>
+
+</div>
+
+<section class="hero">
+
+<h1>Create Your Professional Resume</h1>
+
+<p>
+Complete your profile and generate a modern,
+recruiter-ready resume in minutes.
+</p>
+
+</section>
+
+<section class="progress">
+
+<div class="progress-box">
+
+<div class="step">
+<h3>✓ Template Selected</h3>
+<p>Template already chosen</p>
+</div>
+
+<div class="step active-step">
+<h3>✓ Resume Details</h3>
+<p>Complete your information</p>
+</div>
+
+<div class="step">
+<h3>○ Generate Resume</h3>
+<p>Preview & Download</p>
+</div>
+
+</div>
+
+</section>
+
+<div class="main-container">
+
+<div class="sidebar">
+
+<div class="side-card">
+
+<h3>Resume Progress</h3>
+
+<p>
+You are currently building your professional resume.
+Complete all important sections for the best result.
+</p>
+
+</div>
+
+<div class="side-card">
+
+<h3>Resume Tips</h3>
+
+<div class="tip">
+Use a clear professional summary.
+</div>
+
+<div class="tip">
+Highlight achievements instead of responsibilities.
+</div>
+
+<div class="tip">
+Keep skills relevant to the job role.
+</div>
+
+</div>
+
+<div class="side-card">
+
+<h3>Quick Notes</h3>
+
+<p>
+LinkedIn, GitHub, Portfolio, Certifications and Hobbies
+can be left empty if not applicable.
+</p>
+
+</div>
+
+</div>
+
+<div class="form-card">
+
+<div class="form-title">
+Resume Information
+</div>
+
+<div class="form-subtitle">
+Fill all relevant details below to generate your resume.
+</div>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+{{ form.as_p }}
+
+<button type="submit" class="submit-btn">
+Generate My Resume
+</button>
+
+</form>
+
+<div class="footer-note">
+Your information is securely used only for resume generation.
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

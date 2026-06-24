@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ resume.full_name }} | Executive Resume</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#e5e5e5;
+padding:30px;
+}
+
+.download-btn{
+display:block;
+width:220px;
+margin:0 auto 25px;
+text-align:center;
+text-decoration:none;
+background:#444;
+color:white;
+padding:14px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.download-btn:hover{
+background:#222;
+}
+
+.resume{
+max-width:1000px;
+margin:auto;
+background:white;
+display:grid;
+grid-template-columns:280px 1fr;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+overflow:hidden;
+}
+
+/* LEFT SIDE */
+
+.sidebar{
+background:#ece8e6;
+padding-bottom:40px;
+}
+
+.top-photo{
+background:#3f3f46;
+height:220px;
+display:flex;
+justify-content:center;
+align-items:center;
+clip-path:polygon(0 0,100% 0,100% 85%,50% 100%,0 85%);
+}
+
+.profile-photo{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+}
+
+.sidebar-content{
+padding:30px;
+}
+
+.side-section{
+margin-bottom:30px;
+}
+
+.side-section h3{
+font-size:22px;
+margin-bottom:15px;
+color:#222;
+}
+
+.side-section p{
+line-height:1.8;
+color:#444;
+font-size:15px;
+}
+
+/* RIGHT SIDE */
+
+.main{
+background:#ffffff;
+}
+
+.header{
+background:#3f3f46;
+color:white;
+padding:40px;
+}
+
+.header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.header p{
+font-size:18px;
+opacity:.9;
+}
+
+.content{
+padding:40px;
+}
+
+.section{
+margin-bottom:35px;
+}
+
+.section h2{
+font-size:24px;
+color:#111;
+margin-bottom:12px;
+padding-bottom:8px;
+border-bottom:2px solid #444;
+}
+
+.section p{
+line-height:1.9;
+color:#444;
+white-space:pre-line;
+}
+
+.skills-list{
+line-height:2;
+}
+
+.footer{
+text-align:center;
+padding:20px;
+background:#f5f5f5;
+color:#666;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.resume{
+grid-template-columns:1fr;
+}
+
+.header{
+text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="javascript:window.print()" class="download-btn">
+Download PDF
+</a>
+
+<div class="resume">
+
+<!-- LEFT SIDE -->
+
+<div class="sidebar">
+
+<div class="top-photo">
+
+{% if resume.photo %}
+<img src="{{ resume.photo.url }}" class="profile-photo">
+{% else %}
+<img src="https://via.placeholder.com/150"
+class="profile-photo">
+{% endif %}
+
+</div>
+
+<div class="sidebar-content">
+
+<div class="side-section">
+<h3>Contact</h3>
+
+<p>{{ resume.email }}</p>
+
+<p>{{ resume.phone }}</p>
+
+<p>{{ resume.address }}</p>
+</div>
+
+<div class="side-section">
+<h3>Education</h3>
+
+<p>{{ resume.education }}</p>
+</div>
+
+<div class="side-section">
+<h3>Skills</h3>
+
+<p class="skills-list">
+{{ resume.skills }}
+</p>
+</div>
+
+<div class="side-section">
+<h3>Languages</h3>
+
+<p>{{ resume.languages }}</p>
+</div>
+
+<div class="side-section">
+<h3>Links</h3>
+
+<p>{{ resume.linkedin }}</p>
+
+<p>{{ resume.github }}</p>
+
+<p>{{ resume.portfolio }}</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="main">
+
+<div class="header">
+
+<h1>{{ resume.full_name }}</h1>
+
+<p>Executive Manager</p>
+
+</div>
+
+<div class="content">
+
+<div class="section">
+<h2>Executive Summary</h2>
+
+<p>{{ resume.summary }}</p>
+</div>
+
+<div class="section">
+<h2>Professional Experience</h2>
+
+<p>{{ resume.experience }}</p>
+</div>
+
+<div class="section">
+<h2>Leadership Projects</h2>
+
+<p>{{ resume.projects }}</p>
+</div>
+
+<div class="section">
+<h2>Certifications</h2>
+
+<p>{{ resume.certifications }}</p>
+</div>
+
+<div class="section">
+<h2>Achievements</h2>
+
+<p>{{ resume.achievements }}</p>
+</div>
+
+<div class="section">
+<h2>Interests</h2>
+
+<p>{{ resume.hobbies }}</p>
+</div>
+
+</div>
+
+<div class="footer">
+Executive Resume Template
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

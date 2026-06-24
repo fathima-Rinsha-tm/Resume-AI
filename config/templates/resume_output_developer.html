@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ resume.full_name }} | Developer Resume</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:#f3f4f6;
+    padding:30px;
+}
+
+.resume{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    background:white;
+    box-shadow:0 10px 35px rgba(0,0,0,0.15);
+    min-height:100vh;
+}
+
+.sidebar{
+    width:32%;
+    background:#111827;
+    color:white;
+    padding:35px;
+}
+
+.profile{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.profile img{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #3b82f6;
+}
+
+.profile h1{
+    margin-top:15px;
+    font-size:28px;
+}
+
+.role{
+    color:#93c5fd;
+    margin-top:8px;
+}
+
+.section-title{
+    color:#60a5fa;
+    margin-top:30px;
+    margin-bottom:15px;
+    font-size:20px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+    padding-bottom:8px;
+}
+
+.sidebar p{
+    margin-bottom:10px;
+    line-height:1.6;
+}
+
+.main{
+    width:68%;
+    padding:40px;
+}
+
+.heading{
+    color:#111827;
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.card{
+    margin-bottom:30px;
+}
+
+.card h2{
+    color:#2563eb;
+    margin-bottom:10px;
+    border-bottom:2px solid #e5e7eb;
+    padding-bottom:8px;
+}
+
+.card p{
+    color:#444;
+    line-height:1.8;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill{
+    background:#2563eb;
+    color:white;
+    padding:8px 14px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+.download-btn{
+    display:block;
+    width:220px;
+    margin:25px auto;
+    text-align:center;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:14px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.download-btn:hover{
+    background:#1d4ed8;
+}
+
+</style>
+
+</head>
+<body>
+
+<a href="javascript:window.print()" class="download-btn">
+Download PDF
+</a>
+
+<div class="resume">
+
+    <div class="sidebar">
+
+        <div class="profile">
+
+            {% if resume.photo %}
+    <img src="{{ resume.photo.url }}" alt="Profile Photo">
+{% else %}
+    <img src="https://via.placeholder.com/180" alt="Profile">
+{% endif %}
+
+            <h1>{{ resume.full_name }}</h1>
+
+            <p class="role">Software Developer</p>
+
+        </div>
+
+        <h3 class="section-title">Contact</h3>
+
+        <p>{{ resume.email }}</p>
+        <p>{{ resume.phone }}</p>
+        <p>{{ resume.address }}</p>
+
+        <h3 class="section-title">Links</h3>
+
+        <p>{{ resume.linkedin }}</p>
+        <p>{{ resume.github }}</p>
+        <p>{{ resume.portfolio }}</p>
+
+        <h3 class="section-title">Languages</h3>
+
+        <p>{{ resume.languages }}</p>
+
+        <h3 class="section-title">Hobbies</h3>
+
+        <p>{{ resume.hobbies }}</p>
+
+    </div>
+
+    <div class="main">
+
+        <div class="card">
+            <h2>Professional Summary</h2>
+            <p>{{ resume.summary }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Skills</h2>
+
+            <div class="skills">
+                <span class="skill">{{ resume.skills }}</span>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <h2>Projects</h2>
+            <p>{{ resume.projects }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Experience</h2>
+            <p>{{ resume.experience }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Education</h2>
+            <p>{{ resume.education }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Certifications</h2>
+            <p>{{ resume.certifications }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Achievements</h2>
+            <p>{{ resume.achievements }}</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

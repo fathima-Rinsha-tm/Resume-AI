@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{ resume.full_name }} | Professional Resume</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+padding:30px;
+color:#222;
+}
+
+.resume{
+max-width:900px;
+margin:auto;
+background:white;
+padding:50px;
+box-shadow:0 0 20px rgba(0,0,0,0.08);
+}
+
+.header{
+text-align:center;
+padding-bottom:20px;
+border-bottom:2px solid #333;
+}
+
+.header h1{
+font-size:42px;
+letter-spacing:1px;
+margin-bottom:8px;
+text-transform:uppercase;
+}
+
+.subtitle{
+font-size:18px;
+color:#555;
+margin-bottom:15px;
+}
+
+.contact{
+font-size:14px;
+color:#444;
+line-height:1.8;
+}
+
+.section{
+margin-top:28px;
+}
+
+.section h2{
+font-size:20px;
+text-transform:uppercase;
+border-bottom:1px solid #444;
+padding-bottom:8px;
+margin-bottom:12px;
+letter-spacing:1px;
+}
+
+.section p{
+line-height:1.8;
+white-space:pre-line;
+font-size:15px;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:10px;
+}
+
+.skill{
+padding:8px 14px;
+border:1px solid #333;
+border-radius:4px;
+font-size:14px;
+}
+
+.download-btn{
+display:block;
+width:220px;
+margin:0 auto 25px auto;
+padding:14px;
+background:#222;
+color:white;
+text-align:center;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:15px;
+font-weight:bold;
+}
+
+.download-btn:hover{
+background:#000;
+}
+
+.footer{
+margin-top:35px;
+padding-top:15px;
+border-top:1px solid #ddd;
+text-align:center;
+font-size:13px;
+color:#777;
+}
+
+@media print{
+
+.download-btn{
+display:none;
+}
+
+body{
+padding:0;
+background:white;
+}
+
+.resume{
+box-shadow:none;
+max-width:100%;
+padding:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button onclick="window.print()" class="download-btn">
+Download PDF
+</button>
+
+<div class="resume">
+
+<div class="header">
+
+<h1>{{ resume.full_name }}</h1>
+
+<div class="subtitle">
+Professional Resume
+</div>
+
+<div class="contact">
+
+{{ resume.email }}
+
+{% if resume.phone %}
+| {{ resume.phone }}
+{% endif %}
+
+<br>
+
+{% if resume.address %}
+{{ resume.address }} <br>
+{% endif %}
+
+{% if resume.linkedin %}
+LinkedIn: {{ resume.linkedin }} <br>
+{% endif %}
+
+{% if resume.github %}
+GitHub: {{ resume.github }} <br>
+{% endif %}
+
+{% if resume.portfolio %}
+Portfolio: {{ resume.portfolio }}
+{% endif %}
+
+</div>
+
+</div>
+
+<div class="section">
+<h2>Professional Summary</h2>
+<p>{{ resume.summary }}</p>
+</div>
+
+{% if resume.experience %}
+
+<div class="section">
+<h2>Work Experience</h2>
+<p>{{ resume.experience }}</p>
+</div>
+{% endif %}
+
+{% if resume.achievements %}
+
+<div class="section">
+<h2>Key Achievements</h2>
+<p>{{ resume.achievements }}</p>
+</div>
+{% endif %}
+
+<div class="section">
+<h2>Skills</h2>
+
+<div class="skills">
+<div class="skill">{{ resume.skills }}</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Education</h2>
+<p>{{ resume.education }}</p>
+</div>
+
+{% if resume.certifications %}
+
+<div class="section">
+<h2>Certifications</h2>
+<p>{{ resume.certifications }}</p>
+</div>
+{% endif %}
+
+{% if resume.projects %}
+
+<div class="section">
+<h2>Projects</h2>
+<p>{{ resume.projects }}</p>
+</div>
+{% endif %}
+
+{% if resume.languages %}
+
+<div class="section">
+<h2>Languages</h2>
+<p>{{ resume.languages }}</p>
+</div>
+{% endif %}
+
+<div class="footer">
+Generated with ResumeAI
+</div>
+
+</div>
+
+</body>
+</html>

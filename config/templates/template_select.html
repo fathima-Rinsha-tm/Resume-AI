@@ -1,0 +1,484 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Choose Resume Template | ResumeAI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f8fafc;
+color:#1e293b;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+z-index:1000;
+background:white;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+color:#0f172a;
+}
+
+.back-btn{
+text-decoration:none;
+background:#0f172a;
+color:white;
+padding:12px 24px;
+border-radius:50px;
+font-weight:600;
+transition:.3s;
+}
+
+.back-btn:hover{
+transform:translateY(-3px);
+}
+
+/* HERO */
+
+.hero{
+padding:100px 8%;
+text-align:center;
+background:linear-gradient(180deg,#ffffff,#f1f5f9);
+}
+
+.hero h1{
+font-size:60px;
+font-weight:800;
+margin-bottom:20px;
+color:#0f172a;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+color:#64748b;
+}
+
+/* TEMPLATE SECTION */
+
+.templates{
+padding:90px 8%;
+}
+
+.section-title{
+font-size:45px;
+font-weight:700;
+text-align:center;
+margin-bottom:15px;
+}
+
+.section-subtitle{
+text-align:center;
+color:#64748b;
+font-size:18px;
+margin-bottom:60px;
+}
+
+.template-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+}
+
+.template-card{
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.template-card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+}
+
+.template-card img{
+width:100%;
+height:420px;
+object-fit:cover;
+}
+
+.template-content{
+padding:25px;
+}
+
+.template-content h3{
+font-size:28px;
+margin-bottom:12px;
+color:#0f172a;
+}
+
+.template-content p{
+color:#64748b;
+line-height:1.7;
+margin-bottom:18px;
+}
+
+.features{
+margin-bottom:20px;
+}
+
+.features li{
+list-style:none;
+padding:6px 0;
+color:#334155;
+}
+
+.select-btn{
+display:block;
+text-align:center;
+background:#0f172a;
+color:white;
+padding:15px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.select-btn:hover{
+background:#1e293b;
+}
+
+/* BADGE */
+
+.badge{
+display:inline-block;
+background:#e2e8f0;
+padding:8px 16px;
+border-radius:30px;
+font-size:14px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">ResumeAI</div>
+<a href="/" class="back-btn">Home</a>
+</div>
+
+<section class="hero">
+
+<h1>Choose Your Perfect Resume Template</h1>
+
+<p>
+Select a professional resume template that matches your career goals.
+All templates are designed to be clean, modern and recruiter-friendly.
+</p>
+
+</section>
+
+<section class="templates">
+
+<h2 class="section-title">Premium Resume Templates</h2>
+
+<p class="section-subtitle">
+Choose the design that best represents your professional profile.
+</p>
+
+<div class="template-grid">
+
+<!-- TEMPLATE 1 -->
+
+<div class="template-card">
+
+<img src="{% static 'images/modern_new.jpg' %}">
+
+<div class="template-content">
+
+<div class="badge">Most Popular</div>
+
+<h3>Modern Professional</h3>
+
+<p>
+A clean and modern design perfect for students, graduates and professionals.
+</p>
+
+<ul class="features">
+<li>✓ ATS Friendly</li>
+<li>✓ Modern Layout</li>
+<li>✓ Clean Design</li>
+<li>✓ Interview Ready</li>
+</ul>
+
+<a href="/form/" class="select-btn">
+Use This Template
+</a>
+
+</div>
+</div>
+
+<!-- TEMPLATE 2 -->
+
+<div class="template-card">
+
+<img src="{% static 'images/professional.jpg' %}">
+
+<div class="template-content">
+
+<div class="badge">Corporate Choice</div>
+
+<h3>Professional Corporate</h3>
+
+<p>
+Designed for business professionals, managers and corporate roles.
+</p>
+
+<ul class="features">
+<li>✓ Executive Style</li>
+<li>✓ Professional Layout</li>
+<li>✓ Corporate Look</li>
+<li>✓ HR Friendly</li>
+</ul>
+
+<a href="/form/" class="select-btn">
+Use This Template
+</a>
+
+</div>
+</div>
+<!-- TEMPLATE 3 -->
+
+<div class="template-card">
+
+<img src="{% static 'images/developer.jpg' %}">
+
+<div class="template-content">
+
+<div class="badge">Tech Focused</div>
+
+<h3>Developer Resume</h3>
+
+<p>
+Perfect for software developers, engineers and technology professionals.
+</p>
+
+<ul class="features">
+<li>✓ Skills Highlighted</li>
+<li>✓ Technical Layout</li>
+<li>✓ Portfolio Ready</li>
+<li>✓ Modern Sidebar</li>
+</ul>
+
+<a href="/form/" class="select-btn">
+Use This Template
+</a>
+
+</div>
+</div>
+
+<!-- TEMPLATE 4 -->
+
+<div class="template-card">
+
+<img src="{% static 'images/student.jpg' %}">
+
+<div class="template-content">
+
+<div class="badge">Fresher Friendly</div>
+
+<h3>Student Fresher</h3>
+
+<p>
+Specially designed for students, fresh graduates and internship applications.
+</p>
+
+<ul class="features">
+<li>✓ Education Focused</li>
+<li>✓ Project Section</li>
+<li>✓ Internship Ready</li>
+<li>✓ Beginner Friendly</li>
+</ul>
+
+<a href="/form/" class="select-btn">
+Use This Template
+</a>
+
+</div>
+</div>
+
+<!-- TEMPLATE 5 -->
+
+<div class="template-card">
+
+<img src="{% static 'images/creative.jpg' %}">
+
+<div class="template-content">
+
+<div class="badge">Creative Choice</div>
+
+<h3>Creative Portfolio</h3>
+
+<p>
+A stylish resume template for designers, creatives and modern professionals.
+</p>
+
+<ul class="features">
+<li>✓ Eye Catching Design</li>
+<li>✓ Creative Layout</li>
+<li>✓ Portfolio Friendly</li>
+<li>✓ Unique Appearance</li>
+</ul>
+
+<a href="/form/" class="select-btn">
+Use This Template
+</a>
+
+</div>
+</div>
+<!-- TEMPLATE 6 -->
+
+<div class="template-card">
+
+<img src="{% static 'images/executive.jpg' %}">
+
+<div class="template-content">
+
+<div class="badge">Executive</div>
+
+<h3>Executive Resume</h3>
+
+<p>
+Designed for managers, team leaders, HR professionals
+and corporate executives.
+</p>
+
+<ul class="features">
+<li>✓ Executive Style</li>
+<li>✓ Premium Layout</li>
+<li>✓ Corporate Design</li>
+<li>✓ Leadership Focused</li>
+</ul>
+
+<a href="/form/" class="select-btn">
+Use This Template
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section style="padding:90px 8%;background:white;">
+
+<h2 class="section-title">
+Which Template Fits You?
+</h2>
+
+<p class="section-subtitle">
+Choose according to your career path and goals.
+</p>
+
+<div style="overflow-x:auto;">
+
+<table style="width:100%;border-collapse:collapse;background:white;box-shadow:0 10px 30px rgba(0,0,0,.08);border-radius:20px;overflow:hidden;">
+
+<tr style="background:#0f172a;color:white;">
+<th style="padding:20px;">Template</th>
+<th style="padding:20px;">Best For</th>
+</tr>
+
+<tr>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Modern Professional</td>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Students & Graduates</td>
+</tr>
+
+<tr>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Professional Corporate</td>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Business & Office Jobs</td>
+</tr>
+
+<tr>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Developer Resume</td>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Software & IT Careers</td>
+</tr>
+
+<tr>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Student Fresher</td>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Internships & Freshers</td>
+</tr>
+<tr>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Creative Portfolio</td>
+<td style="padding:18px;border-bottom:1px solid #e2e8f0;">Design & Creative Roles</td>
+</tr>
+
+<tr>
+<td style="padding:18px;">Executive Resume</td>
+<td style="padding:18px;">Managers, Team Leads & Corporate Executives</td>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section style="padding:100px 8%;text-align:center;background:#f8fafc;">
+
+<h2 style="font-size:48px;margin-bottom:20px;color:#0f172a;">
+Ready To Build Your Resume?
+</h2>
+
+<p style="font-size:18px;color:#64748b;margin-bottom:35px;">
+Choose any template and start creating your professional resume today.
+</p>
+
+<a href="/form/"
+style="
+display:inline-block;
+padding:18px 40px;
+background:#0f172a;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:600;
+">
+Start Building
+</a>
+
+</section>
+
+<footer style="background:#0f172a;color:white;text-align:center;padding:30px;">
+© 2026 ResumeAI | Professional Resume Builder
+</footer>
+
+</body>
+</html>
