@@ -105,3 +105,17 @@ def resume_output(request, id):
         template,
         {"resume": resume}
     )
+
+from django.http import JsonResponse
+
+
+def generate_summary(request):
+    education = request.GET.get("education", "")
+    skills = request.GET.get("skills", "")
+    experience = request.GET.get("experience", "")
+
+    summary = f"Motivated {education} candidate with skills in {skills}. Experienced in {experience} and eager to contribute through strong technical and problem-solving abilities."
+
+    return JsonResponse({
+        "summary": summary
+    })

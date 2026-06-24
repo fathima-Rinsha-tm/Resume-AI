@@ -358,6 +358,9 @@ Fill all relevant details below to generate your resume.
 
 {% csrf_token %}
 {{ form.as_p }}
+<button type="button" onclick="generateSummary()" class="submit-btn">
+Generate Summary
+</button>
 
 <button type="submit" class="submit-btn">
 Generate My Resume
@@ -372,6 +375,22 @@ Your information is securely used only for resume generation.
 </div>
 
 </div>
+<script>
 
+function generateSummary() {
+
+    let education = document.getElementById("id_education").value;
+    let skills = document.getElementById("id_skills").value;
+    let experience = document.getElementById("id_experience").value;
+
+    fetch(`/generate-summary/?education=${encodeURIComponent(education)}&skills=${encodeURIComponent(skills)}&experience=${encodeURIComponent(experience)}`)
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("id_summary").value = data.summary;
+    });
+
+}
+
+</script>
 </body>
 </html>

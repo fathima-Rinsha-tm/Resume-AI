@@ -7,4 +7,6 @@ urlpatterns = [
     path('template/select/', views.template_select, name='template_select'),
 
     path('form/', views.resume_form, name='resume_form'),
+    
+    path('generate-summary/', views.generate_summary, name='generate_summary'),
 ]
